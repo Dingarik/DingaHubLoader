@@ -1,0 +1,4 @@
+lua: main.lua:1: attempt to index global 'game' (a nil value)
+stack traceback:
+	main.lua:1: in main chunk
+	[C]: in ?
