@@ -1,4 +1,15 @@
-lua: main.lua:1: attempt to index global 'game' (a nil value)
-stack traceback:
-	main.lua:1: in main chunk
-	[C]: in ?
+local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
+KeySystemUI.New({
+    ApplicationName = "DingaHub", -- Your Key System Application Name
+    Name = "DingaHub", -- Your Script name
+    Info = "Get Key For DingaHub", -- Info text in the GUI, keep empty for default text.
+    DiscordInvite = "https://discord.com/invite/amcaZnDVfA", -- Optional.
+    AuthType = "clientid" -- Can select verifycation with ClientId or IP ("clientid" or "ip")
+})
+repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
+if KeySystemUI.Finished() and KeySystemUI.Closed == false then
+    print("Key verified, can load script")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dingarik/Dingarik/main/DingaHub"))()    -- your script
+else
+    print("Player closed the GUI.")
+end
